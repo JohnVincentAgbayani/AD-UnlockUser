@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "2.2",
+  "description": "Command Document Example JSON Template",
+  "parameters": {
+    "Username": {
+      "type": "String",
+      "description": "Target username to unlock",
+      "default": ""
+    }
+  },
+  "mainSteps": [
+    {
+      "action": "aws:runPowerShellScript",
+      "name": "AddToLocalAdmin",
+      "inputs": {
+        "runCommand": [
+          "",
+          "Unlock-ADAccount -Identity {{Username}}",
+          ""
+        ]
+      }
+    }
+  ]
+}
